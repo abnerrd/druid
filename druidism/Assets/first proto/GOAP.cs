@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace FirstProto
 {
-    public abstract class GOAPAction
+    public abstract class GOAPAction : MonoBehaviour
     {
         public HashSet<KeyValuePair<string, object>> Preconditions { get; private set; }
         public HashSet<KeyValuePair<string, object>> Effects { get; private set; }
 
-        public bool IsInRange { get; private set; }
+        public bool IsInRange { get; set; }
 
         public float Cost;
 
