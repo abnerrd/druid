@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33742671992540782}
   - component: {fileID: 23190139336365556}
   - component: {fileID: 135331781256975220}
+  - component: {fileID: 114468743219434688}
   m_Layer: 0
   m_Name: prefab_plant
   m_TagString: Plant
@@ -84,6 +85,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819151592286374}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114468743219434688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819151592286374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b747bc2bab6a3438d8af2d2246d4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135331781256975220
 SphereCollider:
   m_ObjectHideFlags: 1

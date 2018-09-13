@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33294807584545176}
   - component: {fileID: 23684540415832218}
   - component: {fileID: 136656744785915588}
+  - component: {fileID: 114468381377522600}
   m_Layer: 0
   m_Name: prefab_rabbit
   m_TagString: Untagged
@@ -84,6 +85,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673564053682004}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114468381377522600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673564053682004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef365bae984ae6943baa58f999ac0ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136656744785915588
 CapsuleCollider:
   m_ObjectHideFlags: 1

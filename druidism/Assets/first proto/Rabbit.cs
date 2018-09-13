@@ -26,7 +26,7 @@ namespace FirstProto
         {
             HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
 
-            worldData.Add(new KeyValuePair<string, object>("isHungry", hunger <= 10));
+            worldData.Add(new KeyValuePair<string, object>("isHungry", true));
 
             return worldData;
         }
