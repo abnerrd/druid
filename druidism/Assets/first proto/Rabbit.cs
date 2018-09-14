@@ -10,7 +10,7 @@ namespace FirstProto
     public class Rabbit : MonoBehaviour, IGoap
     {
         int hunger = 20;
-        int moveSpeed = 1;
+        public int moveSpeed = 15;
         
         //  When we generalize this class into !Rabbit, this method will be abstract
         public HashSet<KeyValuePair<string, object>> CreateGoalState()
@@ -33,6 +33,9 @@ namespace FirstProto
 
         public bool MoveAgent(GOAPAction nextAction)
         {
+
+            Debug.Log("Moving");
+
             float step = moveSpeed * Time.deltaTime;
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, nextAction.Target.transform.position, step);
 
@@ -59,7 +62,7 @@ namespace FirstProto
 
         public void PlanFound(HashSet<KeyValuePair<string, object>> goal, Queue<GOAPAction> actions)
         {
-
+            Debug.Log("Plan found");
         }
 
         public void ActionsCompleted()

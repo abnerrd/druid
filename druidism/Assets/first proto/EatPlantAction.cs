@@ -68,14 +68,22 @@ namespace FirstProto
                 }
             }
 
-            targetPlant = closestPlant;
-            Target = targetPlant.gameObject;
+            if (closestPlant != null)
+            {
+                targetPlant = closestPlant;
+                Target = targetPlant.gameObject;
+            }
+            else
+            {
+                Target = null;
+            }
 
             return closestPlant != null;
         }
 
         public override bool Perform(GameObject agent)
         {
+            Debug.Log("EatPlantAction -- PERFORM");
             if(startTime == 0)
             {
                 startTime = Time.time;
@@ -86,6 +94,7 @@ namespace FirstProto
                 //  finished eating, yum yum
                 isEaten = true;
 
+                Destroy(Target);
                 //  TODO aherrera : update w/ hunger benefits on agent
             }
 

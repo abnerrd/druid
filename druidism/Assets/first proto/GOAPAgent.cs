@@ -79,6 +79,10 @@ namespace FirstProto
         {
             _idleState = (fsm, gameObject) =>
             {
+
+                Debug.Log("Making plan --");
+
+
                 //  GOAP Planning -- What're you gonna do?!
 
                 //  get world state and goal we want to plan for
@@ -89,6 +93,8 @@ namespace FirstProto
                 Queue<GOAPAction> plan = _planner.Plan(gameObject, _availableActions, worldState, goal);
                 if (plan != null)
                 {
+                    Debug.Log("-- plan made");
+
                     //  plan created, success
                     _currentActions = plan;
                     _dataProvider.PlanFound(goal, plan);
@@ -98,6 +104,7 @@ namespace FirstProto
                 }
                 else
                 {
+                    Debug.Log("-- plan unable to be made");
                     //  plan could not be created
                     _dataProvider.PlanFailed(goal);
                     _fsm.PopState();
@@ -110,6 +117,8 @@ namespace FirstProto
         {
             _moveState = (fsm, gameObject) =>
             {
+                Debug.Log("Moving --");
+
                 var action = _currentActions.Peek();
                 if (action.RequiresInRange && action.Target == null)
                 {
@@ -132,6 +141,8 @@ namespace FirstProto
         {
             _performState = (fsm, gameObject) =>
             {
+                Debug.Log("Performing --");
+
                 //  Perform the action
                 if (!HasActionPlan())
                 {
@@ -165,13 +176,13 @@ namespace FirstProto
                             _fsm.PushState(_idleState);
                             _dataProvider.PlanAborted(action);
                         }
-                        else
-                        {
-                            //  we ened to move there first?
-                            //  what?
+                    }
+                    else
+                    {
+                        //  we ened to move there first?
+                        //  what?
 
-                            _fsm.PushState(_moveState);
-                        }
+                        _fsm.PushState(_moveState);
                     }
                 }
                 else
